@@ -39,7 +39,7 @@ function buildMetadata(sample) {
     var result = resultArray[0];
    
     // Use d3 to select the panel with id of `#sample-metadata`
-    var PANEL = d3.select("#sample-metadata");
+    const PANEL = d3.select("#sample-metadata");
 
     // Use `.html("") to clear any existing metadata
     PANEL.html("");
@@ -58,7 +58,7 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
   // Use d3.json to load the samples.json file 
   d3.json("samples.json").then((data) => {
-    console.log(data);
+    //console.log(data);
 
     // Create a variable that holds the samples array. 
     var samples = data.samples;
@@ -74,14 +74,14 @@ function buildCharts(sample) {
     var result1 = metaArray[0];
 
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
-    var otu_ids = result.otu_ids
-    var otu_labels = result.otu_labels
+    var otu_ids = result.otu_ids;
+    var otu_labels = result.otu_labels;
     var sample_values = result.sample_values;
     console.log(otu_ids)
     console.log(otu_labels)
     console.log(sample_values)
 
-    // 3. Create a variable that holds the washing frequency.
+        // 3. Create a variable that holds the washing frequency.
    var washing = parseFloat(result1.wfreq)
    console.log(washing)
 
@@ -94,7 +94,7 @@ function buildCharts(sample) {
     var barData = [ {
       x: sample_values.slice(0,10).reverse(),
       y: yticks,
-      text: otu_labels,
+      text: otu_labels.slice(0,10).reverse(),
       type:'bar',
       orientation: 'h'
       
@@ -114,13 +114,13 @@ function buildCharts(sample) {
     Plotly.newPlot("bar",barData, barLayout);
     // Create the trace for the bubble chart.
     var bubbleData = [{
-      x: otu_ids,
-      y: sample_values,
-      text: otu_labels,
+      x: otu_ids.slice(0,10).reverse(),
+      y: sample_values.slice(0,10).reverse(),
+      text: otu_labels.slice(0,10).reverse(),
       mode: 'markers',
       marker: {
-        size: sample_values,
-        color: otu_ids,
+        size: sample_values.slice(0,10).reverse(),
+        color: otu_ids.slice(0,10).reverse(),
         colorscale: 'Earth'
       }
       
