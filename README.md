@@ -1,4 +1,4 @@
-# Plotly Deployment
+# Plotly Deployment of Bacteria Sampling Dashboard
 <img src="plotly.png">
 <img src="plotly2.png">
 
