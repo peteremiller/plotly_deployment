@@ -1,4 +1,8 @@
 # Plotly Deployment
+<img src="plotly.png">
+<img src="plotly2.png">
+
+
 
 Improbable Beef is attempting to manufacture bacteria that will serve as a synthetic beef replacement. If Improbable Beef identifies an appropriate bacterial species, we want to be ready with Roza's volunteer's data to identify whether the identified species is found in one or more of her volunteer's belly button.
 
